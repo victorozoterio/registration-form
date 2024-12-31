@@ -6,8 +6,11 @@
     overflow: hidden;
 }
 
-main {
+.scroll-container {
     overflow: auto;
+}
+
+main {
     padding: 4rem;
 
     & .main-container {
@@ -46,6 +49,54 @@ aside {
 
         & span {
             color: var(--text-highlight);
+        }
+    }
+}
+
+.desktop-only {
+    display: initial;
+}
+
+.mobile-only {
+    display: none;
+}
+
+@media (width < 80em) {
+    .desktop-only {
+        display: none;
+    }
+
+    .mobile-only {
+        display: initial;
+    }
+
+    #app {
+        grid-template-columns: 1fr;
+    }
+    
+    main {
+        padding: 1.5rem;
+
+        & .main-container {
+            margin-inline: auto;
+        }
+    }
+    
+    .aside-background {
+        background-color: var(--surface-secondary);
+    }
+
+    aside {
+        background-color: initial;
+        text-align: center;
+        padding: 1rem;
+        
+        & .aside-container {
+            margin-inline: auto;
+
+            & > img { /* primeiro nível de imagem do aside-container */
+                margin-top: 0.75rem;
+            }
         }
     }
 }

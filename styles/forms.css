@@ -25,3 +25,9 @@ fieldset + fieldset { /* Quando tiver um fieldset e anterior a ele tiver outro f
     display: flex;
     gap: 1rem;
 }
+
+@media (width < 80em) {
+    .actions-wrapper {
+        display: grid;
+    }
+}
